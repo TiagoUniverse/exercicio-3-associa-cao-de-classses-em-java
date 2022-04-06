@@ -7,15 +7,8 @@ public class Program {
 
     CadastrarProfessor();
 
+    CadastrarAluno();
 /*
-    Aluno Tiago = new Aluno();
-    Tiago.cpf = "9876543221";
-    Tiago.curso = Raomi.turma;
-    Tiago.identidade = "1239449";
-    Tiago.matricula = "12929";
-    Tiago.nome = "Tiago";
-    Tiago.sexo = "Masculino";
-
     System.out.println("Turma de "+turma1.disciplina+" cadastrada!");
 */
    }
@@ -75,7 +68,36 @@ public static void CadastrarProfessor(){
     Raomi.sexo = "Masculino";
     Raomi.turma = turma1.disciplina;
 */
-}
+  }
+  public static void CadastrarAluno(){
+    Scanner sc = new Scanner(System.in);
 
+    Aluno aluno1 = new Aluno();
+    System.out.println("Bem vindo à matrícula de alunos!");
+    System.out.println("Informe o nome do aluno: ");
+    aluno1.nome= sc.nextLine();
+    System.out.println("Informe o cpf: ");
+    aluno1.cpf= sc.nextLine();
+    System.out.println("Informe o número da identidade: ");
+    aluno1.identidade= (sc.nextLine()); 
+    System.out.println(" Informe a matrícula: ");
+    aluno1.matricula= (sc.nextLine()); 
+    System.out.println(" Qual o sexo do aluno? ");
+    aluno1.sexo= (sc.nextLine()); 
+    System.out.println("Por fim, qual é o curso deste aluno? ");
+    aluno1.curso = sc.nextLine();
+  
+    System.out.println("Aluno "+aluno1.nome+" do curso "+aluno1.curso+" cadastrado!");     
+  
+    /*
+    Aluno Tiago = new Aluno();
+    Tiago.cpf = "9876543221";
+    Tiago.curso = Raomi.turma;
+    Tiago.identidade = "1239449";
+    Tiago.matricula = "12929";
+    Tiago.nome = "Tiago";
+    Tiago.sexo = "Masculino";
+    */
+  }
 
 }
