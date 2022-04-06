@@ -28,7 +28,6 @@ public class Program {
    }
 
    public static void CadastrarTurma(){
-      String nome1;
       Scanner sc = new Scanner(System.in);
   
       Turma turma1 = new Turma();
