@@ -4,13 +4,16 @@ public class Program {
   public static void main(String[] args) {
     Scanner entrada = new Scanner(System.in);
 
-      //Objeto Professor e Turma
-      Professor p = new Professor();
-      Turma turma1 = new Turma();
-      System.out.println("Dados do professor: "+ p.imprimir()); 
+    // Objeto Professor e Turma
+    Professor prof1 = new Professor();
+    Turma turma1 = new Turma();
 
-    //CadastrarTurma();
-    
+    CadastrarProfessorTurma();
+
+    System.out.println("Dados do professor: " + prof1.imprimir());
+
+    // CadastrarTurma();
+
     /*
      * CadastrarProfessor();
      * 
@@ -21,11 +24,114 @@ public class Program {
      * System.out.println("Turma de "+turma1.disciplina+" cadastrada!");
      */
 
-     entrada.close();
+    entrada.close();
   }
 
+  public static void CadastrarProfessorTurma() {
+    Scanner sc = new Scanner(System.in);
+
+    Professor prof1 = new Professor();
+    System.out.println("Bem vindo ao cadastro de professores!");
+    System.out.println("1ª - Informe o nome do professor: ");
+    prof1.nome = sc.nextLine();
+    System.out.println("2ª - Informe a sua chapa: ");
+    prof1.chapa = sc.nextLine();
+    System.out.println("3ª - Informe o cpf: ");
+    prof1.cpf = sc.nextLine();
+    System.out.println("4ª - Informe o número da identidade: ");
+    prof1.identidade = sc.nextLine();
+    System.out.println("5ª -  Qual o sexo do professor? (masculino || feminino)");
+    prof1.sexo = sc.nextLine();
+
+    // System.out.println("Professor " + prof1.nome + " da turma " + prof1.turma + "
+    // cadastrado!");
+
+
+    // Cadastro da turma do professor
+
+    // Atributos
+    String analise;
+    int analiseValida = 0;
+
+    Turma turma1 = new Turma();
+    System.out.println("\n Bem vindo ao cadastro de turma!");
+    System.out.println("1ª- Informe o título da turma: ");
+    turma1.disciplina = sc.nextLine();
+    System.out.println("2ª- Informe o bloco da turma: ");
+    turma1.bloco = sc.nextLine();
+
+    // Verificação se as informações foram digitadas corretamente
+    // Resetando as variáveis de validação, visto que elas serão reutilizadas
+    analise = "";
+    analiseValida = 0;
+    do {
+      System.out.println("3ª- Informe o número da turma: ");
+      analise = sc.nextLine();
+      // Verificação se a resposta do usuário é número
+      if (!analise.matches("[0-9]+")) {
+        analiseValida = 0;
+        System.out.println();
+        System.out.println("Número inválido. Por favor, digite apenas um número: ");
+      } else {
+        // O sistema entra no else quando as informações estão corretas
+        analiseValida = 1;
+        turma1.numeroTurma = Integer.parseInt(analise);
+        System.out.println(turma1.numeroTurma);
+      }
+    } while (analiseValida == 0);
+
+    analise = "";
+    analiseValida = 0;
+    do {
+      System.out.println("4ª- Informe o número da sala: ");
+      analise = sc.nextLine();
+      // Verificação se a resposta do usuário é número
+      if (!analise.matches("[0-9]+")) {
+        analiseValida = 0;
+        System.out.println();
+        System.out.println("Número inválido. Por favor, digite apenas um número: ");
+      } else {
+        // O sistema entra no else quando as informações estão corretas
+        analiseValida = 1;
+        turma1.numeroDaSala = Integer.parseInt(analise);
+        System.out.println(turma1.numeroDaSala);
+      }
+    } while (analiseValida == 0);
+
+    analise = "";
+    analiseValida = 0;
+    do {
+      System.out.println("5ª- Por fim, esta turma já está disponível? (Sim / Nao)");
+      // Verificação do usuário caso ele diga sim ou não
+      analise = sc.next();
+      if (analise.equals("Sim") || analise.equals("sim") || analise.equals("Si") || analise.equals("si")
+          || analise.equals("Yes") || analise.equals("yes") || analise.equals("True") || analise.equals("true")) {
+        // Se a análiseValida for igual a 1, então o usuário digitou corretamente
+        analiseValida = 1;
+        turma1.disponivel = true; // || = ou
+      } else if (analise.equals("Nao") || analise.equals("nao") || analise.equals("Não") || analise.equals("não")
+          || analise.equals("No") || analise.equals("no") || analise.equals("False") || analise.equals("false")
+          || analise.equals("NÆo")) {
+        analiseValida = 1;
+        turma1.disponivel = false;
+      } else {
+        System.out.println();
+        System.out.println("Informação inválida! Por favor, digite novamente: ");
+      }
+    } while (analiseValida == 0);
+
+    System.out.println("Turma " + turma1.disciplina + " cadastrada!");
+
+    sc.close();
+
+    //Teste
+    System.out.println("Dados do professor: " + prof1.imprimir());
+
+  }
+  //Cadastrar Turma
+/*
   public static void CadastrarTurma() {
-    //Atributos
+    // Atributos
     String analise;
     int analiseValida = 0;
     Scanner sc = new Scanner(System.in);
@@ -108,33 +214,37 @@ public class Program {
      * turma1.disponivel = true;
      * turma1.numeroDaSala = 1;
      * turma1.numeroTurma = 2;
-     */
+     
   }
+*/
 
+//Cadastrar Professor
+/*
   public static void CadastrarProfessor() {
     Scanner sc = new Scanner(System.in);
 
     Professor prof1 = new Professor();
     System.out.println("Bem vindo ao cadastro de professores!");
-    System.out.println("Informe o nome do professor: ");
+    System.out.println("1ª - Informe o nome do professor: ");
     prof1.nome = sc.nextLine();
-    System.out.println("Informe a sua chapa: ");
+    System.out.println("2ª - Informe a sua chapa: ");
     prof1.chapa = sc.nextLine();
-    System.out.println("Informe o cpf: ");
+    System.out.println("3ª - Informe o cpf: ");
     prof1.cpf = sc.nextLine();
-    System.out.println(" Informe o número da identidade: ");
+    System.out.println("4ª - Informe o número da identidade: ");
     prof1.identidade = sc.nextLine();
-    System.out.println(" Qual o sexo do professor? ");
+    System.out.println("5ª -  Qual o sexo do professor? (masculino || feminino) ");
     prof1.sexo = sc.nextLine();
-    
-    //Falta acrescentarr a sessão de turma no professor
-  
-    /*
-    System.out.println("Por fim, qual é a turma deste professor? ");
-    prof1.turma = sc.nextLine();
 
-    System.out.println("Professor " + prof1.nome + " da turma " + prof1.turma + " cadastrado!");
-   */
+    // Falta acrescentarr a sessão de turma no professor
+
+    /*
+     * System.out.println("Por fim, qual é a turma deste professor? ");
+     * prof1.turma = sc.nextLine();
+     * 
+     * System.out.println("Professor " + prof1.nome + " da turma " + prof1.turma +
+     * " cadastrado!"); */
+     /*
 
     sc.close();
     /*
@@ -145,9 +255,11 @@ public class Program {
      * Raomi.identidade = "1234567";
      * Raomi.sexo = "Masculino";
      * Raomi.turma = turma1.disciplina;
-     */
+     
   }
-
+  */
+  //CadastrarAluno
+/*
   public static void CadastrarAluno() {
     Scanner sc = new Scanner(System.in);
 
@@ -161,7 +273,7 @@ public class Program {
     aluno1.identidade = (sc.nextLine());
     System.out.println(" Informe a matrícula: ");
     aluno1.matricula = (sc.nextLine());
-    System.out.println(" Qual o sexo do aluno? ");
+    System.out.println(" Qual o sexo do aluno? (masculino || feminino) ");
     aluno1.sexo = (sc.nextLine());
     System.out.println("Por fim, qual é o curso deste aluno? ");
     aluno1.curso = sc.nextLine();
@@ -177,7 +289,7 @@ public class Program {
      * Tiago.matricula = "12929";
      * Tiago.nome = "Tiago";
      * Tiago.sexo = "Masculino";
-     */
+     
   }
-
+*/
 }
