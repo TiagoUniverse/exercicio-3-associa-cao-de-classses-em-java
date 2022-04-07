@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 
 public class Turma {
     public int numeroTurma;

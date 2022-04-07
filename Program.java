@@ -5,14 +5,18 @@ public class Program {
     
      CadastrarTurma();
 
+     /*
     CadastrarProfessor();
 
     CadastrarAluno();
+
+    */
 /*
     System.out.println("Turma de "+turma1.disciplina+" cadastrada!");
 */
    }
    public static void CadastrarTurma(){
+    String analise;
     Scanner sc = new Scanner(System.in);
 
     Turma turma1 = new Turma();
@@ -26,9 +30,23 @@ public class Program {
     System.out.println(" Informe o número da Sala: ");
     turma1.numeroDaSala= Integer.parseInt(sc.nextLine()); 
     System.out.println("Por fim, esta turma já está disponível? ");
-    turma1.disponivel = sc.nextBoolean();
-
-    System.out.println("Turma "+turma1.disciplina+" cadastrada!");    
+    //Verificação do usuário caso ele diga sim ou não
+    analise = sc.next();
+    System.out.println(analise);
+    if(analise.equals("Sim")){
+      turma1.disponivel = true;  // || = ou
+    } 
+   /* 
+  }else{
+    if(analise == "Nao" || analise == "Não" || analise == "No"){
+    turma1.disponivel = false;
+  }
+*/
+    System.out.println("Turma "+turma1.disciplina+" cadastrada!");   
+    
+    System.out.println(turma1.disponivel);
+    sc.close();
+  }
 /*
     Turma turma1 = new Turma();
 turma1.bloco = 1;
@@ -59,6 +77,7 @@ public static void CadastrarProfessor(){
   prof1.turma = sc.nextLine();
 
   System.out.println("Professor "+prof1.nome+" da turma "+prof1.turma+" cadastrado!");    
+  sc.close();
 /*
     Professor Raomi = new Professor();
     Raomi.nome = "Raomi";
@@ -87,7 +106,8 @@ public static void CadastrarProfessor(){
     System.out.println("Por fim, qual é o curso deste aluno? ");
     aluno1.curso = sc.nextLine();
   
-    System.out.println("Aluno "+aluno1.nome+" do curso "+aluno1.curso+" cadastrado!");     
+    System.out.println("Aluno "+aluno1.nome+" do curso "+aluno1.curso+" cadastrado!"); 
+    sc.close();    
   
     /*
     Aluno Tiago = new Aluno();
