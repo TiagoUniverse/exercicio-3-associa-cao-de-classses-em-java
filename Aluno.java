@@ -54,4 +54,19 @@ public class Aluno {
     public void setCurso(String curso) {
 		this.curso = curso;
 	}
- }
+    
+    public String imprimir(){
+        return "Nome: " +nome+ ",\n sexo: " +sexo+ ",\n Nª da matricula: " +matricula+ ",\n cpf:" +cpf+ ",\n Nª da identidade: " +identidade+ ", \n Curso: " +curso;
+    }
+
+
+
+    /*
+        public String nome;
+    public String sexo;
+    public String matricula;
+    public String cpf;
+    public String identidade;
+    public String curso;
+    */
+}
