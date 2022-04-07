@@ -26,11 +26,32 @@ public class Program {
     turma1.disciplina= sc.nextLine();
     System.out.println("Informe o bloco da turma: ");
     turma1.bloco= sc.nextLine();
-    System.out.println("Informe o número da turma: ");
-    turma1.numeroTurma= Integer.parseInt(sc.nextLine()); 
-    System.out.println(" Informe o número da Sala: ");
-    turma1.numeroDaSala= Integer.parseInt(sc.nextLine()); 
+
+    //Verificação se as informações foram digitadas corretamente
+      // Resetando as variáveis de validação, visto que elas serão reutilizadas
+      analise = "";
+      analiseValida = 0;
+      do{
+        System.out.println("Informe o número da turma: ");
+        analise = sc.nextLine();
+        //Verificação se a resposta do usuário é número
+        if (!analise.matches("[0-9]+")) {
+          analiseValida = 0;
+          System.out.println("Invalid number");
+        } else{
+          //O sistema entra no else quando as informações estão corretas
+          analiseValida = 1;
+          turma1.numeroTurma = Integer.parseInt(analise);
+          System.out.println(turma1.numeroTurma);
+        }
+      }while( analiseValida ==0); 
+
+      
+        System.out.println(" Informe o número da Sala: ");
+        turma1.numeroDaSala= Integer.parseInt(sc.nextLine()); 
+       
     
+    analiseValida = 0;
     do{
     System.out.println("Por fim, esta turma já está disponível? ");
     //Verificação do usuário caso ele diga sim ou não
@@ -50,7 +71,7 @@ public class Program {
     System.out.println("Turma "+turma1.disciplina+" cadastrada!");   
     
     sc.close();
-  }
+  
 /*
     Turma turma1 = new Turma();
 turma1.bloco = 1;
@@ -59,7 +80,7 @@ turma1.disponivel = true;
 turma1.numeroDaSala = 1;
 turma1.numeroTurma = 2; 
 */
-
+}
 
 
 public static void CadastrarProfessor(){
