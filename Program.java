@@ -4,7 +4,7 @@ public class Program {
   public static void main(String[] args) {
 
     CadastrarTurma();
-
+    
     /*
      * CadastrarProfessor();
      * 
@@ -17,6 +17,7 @@ public class Program {
   }
 
   public static void CadastrarTurma() {
+    //Atributos
     String analise;
     int analiseValida = 0;
     Scanner sc = new Scanner(System.in);
@@ -112,11 +113,11 @@ public class Program {
     System.out.println("Informe a sua chapa: ");
     prof1.chapa = sc.nextLine();
     System.out.println("Informe o cpf: ");
-    prof1.cpf = (sc.nextLine());
+    prof1.cpf = sc.nextLine();
     System.out.println(" Informe o número da identidade: ");
-    prof1.identidade = (sc.nextLine());
+    prof1.identidade = sc.nextLine();
     System.out.println(" Qual o sexo do professor? ");
-    prof1.sexo = (sc.nextLine());
+    prof1.sexo = sc.nextLine();
     System.out.println("Por fim, qual é a turma deste professor? ");
     prof1.turma = sc.nextLine();
 
