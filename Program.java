@@ -2,8 +2,14 @@ import java.util.Scanner;
 
 public class Program {
   public static void main(String[] args) {
+    Scanner entrada = new Scanner(System.in);
 
-    CadastrarTurma();
+      //Objeto Professor e Turma
+      Professor p = new Professor();
+      Turma turma1 = new Turma();
+      System.out.println("Dados do professor: "+ p.imprimir()); 
+
+    //CadastrarTurma();
     
     /*
      * CadastrarProfessor();
@@ -14,6 +20,8 @@ public class Program {
     /*
      * System.out.println("Turma de "+turma1.disciplina+" cadastrada!");
      */
+
+     entrada.close();
   }
 
   public static void CadastrarTurma() {
@@ -118,10 +126,16 @@ public class Program {
     prof1.identidade = sc.nextLine();
     System.out.println(" Qual o sexo do professor? ");
     prof1.sexo = sc.nextLine();
+    
+    //Falta acrescentarr a sessão de turma no professor
+  
+    /*
     System.out.println("Por fim, qual é a turma deste professor? ");
     prof1.turma = sc.nextLine();
 
     System.out.println("Professor " + prof1.nome + " da turma " + prof1.turma + " cadastrado!");
+   */
+
     sc.close();
     /*
      * Professor Raomi = new Professor();

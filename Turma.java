@@ -47,8 +47,17 @@ public class Turma {
         this.disponivel = disponivel;
     }
     
-     
+     //impressão 
+     public String imprimir(){
+         return disciplina +",\n Nª da turma: "+numeroTurma+ ",\n Nª da sala:"+numeroDaSala+",\n Bloco: "+bloco+",\n se encontra disponivel: "+disponivel;
+     }
 
-
+/*
+  public int numeroTurma;
+    public int numeroDaSala;
+    public String disciplina;
+    public String bloco;
+    public boolean disponivel;
+*/
 }
 

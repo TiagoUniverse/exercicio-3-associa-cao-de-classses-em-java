@@ -4,8 +4,36 @@ public class Professor {
     public String chapa;
     public String cpf;
     public String identidade;
-    public String turma;
 
+    public Turma turmaProf;
+
+
+    //default
+    public Professor(){
+       this.turmaProf  = new Turma();
+    }
+
+    public Professor(String nome, String sexo, String chapa, String cpf, String identidade){
+       this.nome = nome;
+       this.sexo = sexo;
+       this.chapa = chapa;
+       this.cpf = cpf;
+       this.identidade = identidade;
+       
+       this.turmaProf  = new Turma();
+    }
+
+    public Professor(String nome, String sexo, String chapa, String cpf, String identidade, Turma turmaProf){
+        this.nome = nome;
+        this.sexo = sexo;
+        this.chapa = chapa;
+        this.cpf = cpf;
+        this.identidade = identidade; 
+        this.turmaProf = turmaProf;
+     }
+
+
+    //métodos de acesso
     public String getNome() {
         return this.nome;
     }
@@ -46,14 +74,28 @@ public class Professor {
         this.identidade = identidade;
     }
 
-    public String getTurma() {
-        return this.turma;
+    public Turma getTurmaProf() {
+        return this.turmaProf;
     }
 
-    public void setTurma(String turma) {
-        this.turma = turma;
+    public void setTurmaProf(Turma turmaProf) {
+        this.turmaProf = turmaProf;
     }
 
+    //impressão dos dados
+    public String imprimir (){
+        return "Nome: " + nome + "\n sexo: " + sexo + "\n chapa: " + chapa + "\n cpf: " + cpf + "\n Nª da identidade:" + identidade + "\n Turma: " + turmaProf.imprimir(); 
+    }
 
+/*
+    public String nome;
+    public String sexo;
+    public String chapa;
+    public String cpf;
+    public String identidade;
+
+    public Turma turmaProf;
+
+*/
 }
 
