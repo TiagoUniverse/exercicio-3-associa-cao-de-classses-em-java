@@ -17,6 +17,7 @@ public class Program {
    }
    public static void CadastrarTurma(){
     String analise;
+    int analiseValida = 0;
     Scanner sc = new Scanner(System.in);
 
     Turma turma1 = new Turma();
@@ -29,22 +30,25 @@ public class Program {
     turma1.numeroTurma= Integer.parseInt(sc.nextLine()); 
     System.out.println(" Informe o número da Sala: ");
     turma1.numeroDaSala= Integer.parseInt(sc.nextLine()); 
+    
+    do{
     System.out.println("Por fim, esta turma já está disponível? ");
     //Verificação do usuário caso ele diga sim ou não
-    analise = sc.next();
-    System.out.println(analise);
-    if(analise.equals("Sim")){
-      turma1.disponivel = true;  // || = ou
-    } 
-   /* 
-  }else{
-    if(analise == "Nao" || analise == "Não" || analise == "No"){
-    turma1.disponivel = false;
-  }
-*/
+      analise = sc.next();
+      if(analise.equals("Sim") || analise.equals("sim") || analise.equals("Si") || analise.equals("si")|| analise.equals("Yes") || analise.equals("yes") || analise.equals("True") || analise.equals("true") ){
+       // Se a análiseValida for igual a 1, então o usuário digitou corretamente
+        analiseValida = 1;
+        turma1.disponivel = true;  // || = ou
+      } else if(analise.equals("Nao") || analise.equals("nao") || analise.equals("Não") || analise.equals("não")  ||  analise.equals("No") || analise.equals("no") || analise.equals("False") || analise.equals("false") || analise.equals("NÆo")){
+        analiseValida = 1;
+        turma1.disponivel = false;
+      } else{
+        System.out.println("Informação inválida! Por favor, digite novamente: ");
+      }
+    }while(analiseValida == 0);
+
     System.out.println("Turma "+turma1.disciplina+" cadastrada!");   
     
-    System.out.println(turma1.disponivel);
     sc.close();
   }
 /*
@@ -56,7 +60,7 @@ turma1.numeroDaSala = 1;
 turma1.numeroTurma = 2; 
 */
 
-}
+
 
 public static void CadastrarProfessor(){
   Scanner sc = new Scanner(System.in);
