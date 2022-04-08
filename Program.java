@@ -278,7 +278,7 @@ public class Program {
   // CadastrarAluno
   
     public static void CadastrarAluno() {
-    Scanner sc = new Scanner(System.in);
+    Scanner scAluno = new Scanner(System.in);
     
     //atributos
     String analise;
@@ -287,7 +287,7 @@ public class Program {
     //Aluno aluno1 = new Aluno();
     System.out.println("Bem vindo à matrícula de alunos!");
     System.out.println("1ª- Informe o nome do aluno: ");
-    aluno1.nome = sc.nextLine();
+    aluno1.nome = sca.nextLine();
     System.out.println("2ª- Informe o cpf: ");
     aluno1.cpf = sc.nextLine();
     System.out.println("3ª- Informe o número da identidade: ");
@@ -296,13 +296,13 @@ public class Program {
     aluno1.matricula = (sc.nextLine());
     System.out.println("5ª- Qual o sexo do aluno? (masculino || feminino) ");
     aluno1.sexo = (sc.nextLine());
-    System.out.println("6ª- Por fim, o curso deste aluno é o: " +turma1.getDisciplina());
+    
     
     //resetando 
     analise ="";
     analiseValida = 0;
     do {
-      System.out.println("5ª- Por fim, esta turma já está disponível? (Sim / Nao)");
+      System.out.println("6ª- Por fim, o curso deste aluno é o: " +turma1.getDisciplina() +" (Sim || Nao)");
       // Verificação do usuário caso ele diga sim ou não
       analise = sc.next();
       if (analise.equals("Sim") || analise.equals("sim") || analise.equals("Si") || analise.equals("si")
@@ -322,7 +322,7 @@ public class Program {
       }
     } while (analiseValida == 0);
 
-  //  System.out.println("Aluno " + aluno1.nome + " do curso " + aluno1.curso +" cadastrado!");
+    System.out.println("Aluno "+ aluno1.nome+ " dco curso: "+aluno1.curso+"  cadastrado!");
     sc.close();
     
     /*
