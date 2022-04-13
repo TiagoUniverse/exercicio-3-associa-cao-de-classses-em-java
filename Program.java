@@ -10,20 +10,22 @@ public class Program {
   public static void main(String[] args) {
     Scanner entrada = new Scanner(System.in);
 
-    /*Objeto Professor e Turma de forma LOCAL
-    // Professor prof1 = new Professor();
-    // Turma turma1 = new Turma();
-*/
+    /*
+     * /*Objeto Professor e Turma de forma LOCAL
+     * // Professor prof1 = new Professor();
+     * // Turma turma1 = new Turma();
+     */
     CadastrarProfessorTurma();
 
     System.out.println("Dados do professor: " + prof1.imprimir());
 
     CadastrarAluno();
 
-    System.out.println("Dados do aluno: "+ aluno1.imprimir() );  
-    /* CadastrarTurma();
-
+    System.out.println("Dados do aluno: " + aluno1.imprimir());
     /*
+     * CadastrarTurma();
+     * 
+     * /*
      * CadastrarProfessor();
      * 
      * CadastrarAluno();
@@ -35,7 +37,6 @@ public class Program {
 
     entrada.close();
   }
-  
 
   public static void CadastrarProfessorTurma() {
     Scanner sc = new Scanner(System.in);
@@ -138,6 +139,8 @@ public class Program {
     // System.out.println("\n Dados do professor: " + prof1.imprimir());
 
   }
+
+  
   // Cadastrar Turma
   /*
    * public static void CadastrarTurma() {
@@ -232,6 +235,7 @@ public class Program {
    * 
    * }
    */
+  
 
   // Cadastrar Professor
   /*
@@ -276,35 +280,34 @@ public class Program {
    * }
    */
   // CadastrarAluno
-  
-    public static void CadastrarAluno() {
+
+  public static void CadastrarAluno() {
     Scanner scAluno = new Scanner(System.in);
-    
-    //atributos
+
+    // atributos
     String analise;
     int analiseValida;
 
-    //Aluno aluno1 = new Aluno();
+    // Aluno aluno1 = new Aluno();
     System.out.println("Bem vindo à matrícula de alunos!");
     System.out.println("1ª- Informe o nome do aluno: ");
-    aluno1.nome = sca.nextLine();
+    aluno1.nome = scAluno.nextLine();
     System.out.println("2ª- Informe o cpf: ");
-    aluno1.cpf = sc.nextLine();
+    aluno1.cpf = scAluno.nextLine();
     System.out.println("3ª- Informe o número da identidade: ");
-    aluno1.identidade = (sc.nextLine());
+    aluno1.identidade = (scAluno.nextLine());
     System.out.println("4ª- Informe a matrícula: ");
-    aluno1.matricula = (sc.nextLine());
+    aluno1.matricula = (scAluno.nextLine());
     System.out.println("5ª- Qual o sexo do aluno? (masculino || feminino) ");
-    aluno1.sexo = (sc.nextLine());
-    
-    
-    //resetando 
-    analise ="";
+    aluno1.sexo = (scAluno.nextLine());
+
+    // resetando
+    analise = "";
     analiseValida = 0;
     do {
-      System.out.println("6ª- Por fim, o curso deste aluno é o: " +turma1.getDisciplina() +" (Sim || Nao)");
+      System.out.println("6ª- Por fim, o curso deste aluno é o: " + turma1.getDisciplina() + " (Sim || Nao)");
       // Verificação do usuário caso ele diga sim ou não
-      analise = sc.next();
+      analise = scAluno.next();
       if (analise.equals("Sim") || analise.equals("sim") || analise.equals("Si") || analise.equals("si")
           || analise.equals("Yes") || analise.equals("yes") || analise.equals("True") || analise.equals("true")) {
         // Se a análiseValida for igual a 1, então o usuário digitou corretamente
@@ -314,57 +317,60 @@ public class Program {
           || analise.equals("No") || analise.equals("no") || analise.equals("False") || analise.equals("false")
           || analise.equals("NÆo")) {
         analiseValida = 1;
-            System.out.println("Que pena que não está participando do curso. Então nos informe o seu curso:");
-            aluno1.curso = sc.nextLine();
+        System.out.println("Que pena que não está participando do curso. Então nos informe o seu curso:");
+        aluno1.curso = scAluno.nextLine();
       } else {
         System.out.println();
         System.out.println("Informação inválida! Por favor, digite novamente: ");
       }
     } while (analiseValida == 0);
 
-    System.out.println("Aluno "+ aluno1.nome+ " dco curso: "+aluno1.curso+"  cadastrado!");
-    sc.close();
-    
+    System.out.println("Aluno " + aluno1.nome + " dco curso: " + aluno1.curso + "  cadastrado!");
+    scAluno.close();
+
     /*
-   * Aluno Tiago = new Aluno();
-   * Tiago.cpf = "9876543221";
-   * Tiago.curso = Raomi.turma;
-   * Tiago.identidade = "1239449";
-   * Tiago.matricula = "12929";
-   * Tiago.nome = "Tiago";
-   * Tiago.sexo = "Masculino";
+     * Aluno Tiago = new Aluno();
+     * Tiago.cpf = "9876543221";
+     * Tiago.curso = Raomi.turma;
+     * Tiago.identidade = "1239449";
+     * Tiago.matricula = "12929";
+     * Tiago.nome = "Tiago";
+     * Tiago.sexo = "Masculino";
+     * 
+     * }
+     */
+  }
+  // Método Experimental SimOuNao
+  /*
+   * public static boolean simOuNao(){
+   * String analise;
+   * int analiseValida = 0;
+   * Scanner sc = new Scanner(System.in);
+   * do {
+   * // Verificação do usuário caso ele diga sim ou não
+   * analise = sc.next();
+   * if (analise.equals("Sim") || analise.equals("sim") || analise.equals("Si") ||
+   * analise.equals("si")
+   * || analise.equals("Yes") || analise.equals("yes") || analise.equals("True")
+   * || analise.equals("true")) {
+   * // Se a análiseValida for igual a 1, então o usuário digitou corretamente
+   * analiseValida = 1;
+   * return true;
+   * break; // || = ou
+   * } else if (analise.equals("Nao") || analise.equals("nao") ||
+   * analise.equals("Não") || analise.equals("não")
+   * || analise.equals("No") || analise.equals("no") || analise.equals("False") ||
+   * analise.equals("false")
+   * || analise.equals("NÆo")) {
+   * analiseValida = 1;
+   * return false;
+   * } else {
+   * System.out.println();
+   * System.out.println("Informação inválida! Por favor, digite novamente: ");
+   * }
+   * } while (analiseValida == 0);
    * 
    * }
    */
-    }
-    //Método Experimental SimOuNao
-    /*
-public static boolean simOuNao(){
-    String analise;
-    int analiseValida = 0;
-    Scanner sc = new Scanner(System.in);
-  do {
-      // Verificação do usuário caso ele diga sim ou não
-      analise = sc.next();
-      if (analise.equals("Sim") || analise.equals("sim") || analise.equals("Si") || analise.equals("si")
-          || analise.equals("Yes") || analise.equals("yes") || analise.equals("True") || analise.equals("true")) {
-        // Se a análiseValida for igual a 1, então o usuário digitou corretamente
-        analiseValida = 1;
-        return true;
-        break; // || = ou
-      } else if (analise.equals("Nao") || analise.equals("nao") || analise.equals("Não") || analise.equals("não")
-          || analise.equals("No") || analise.equals("no") || analise.equals("False") || analise.equals("false")
-          || analise.equals("NÆo")) {
-        analiseValida = 1;
-        return false;
-      } else {
-        System.out.println();
-        System.out.println("Informação inválida! Por favor, digite novamente: ");
-      }
-    } while (analiseValida == 0);
-      
-}
-  */
- 
 
-  }
+}
